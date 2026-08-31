@@ -7,3 +7,6 @@
 [submodule "plumber"]
 	path = plumber
 	url = https://github.com/techcoderlab/plumber.git
+[submodule "electrical"]
+	path = electrical
+	url = https://github.com/techcoderlab/electrical.git
