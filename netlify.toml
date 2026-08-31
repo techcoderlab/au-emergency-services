@@ -1,6 +1,25 @@
 [build]
-  publish = "." # Change this to "dist" or "build" if using React/Vue/Vite
-  command = "echo 'Building site...'" # Change to your framework build command if needed
+  publish = "."
 
 [build.environment]
   GIT_SUBMODULES = "true"
+
+# --- Redirect & Rewrite Rules ---
+
+# 1. Route Plumber Traffic First
+[[redirects]]
+  from = "/plumber/*"
+  to = "/plumber/:splat"
+  status = 200
+
+# 2. Route Electrical Traffic Second
+[[redirects]]
+  from = "/electrical/*"
+  to = "/electrical/:splat"
+  status = 200
+
+# 3. Catch-all: Route everything else (Root / Main Site) to the Emergency module
+[[redirects]]
+  from = "/*"
+  to = "/emergency/:splat"
+  status = 200
