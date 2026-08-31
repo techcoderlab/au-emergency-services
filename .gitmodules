@@ -1,0 +1,6 @@
+[submodule "au-emergency-services"]
+	path = au-emergency-services
+	url = https://github.com/techcoderlab/au-emergency-services.git
+[submodule "emergency"]
+	path = emergency
+	url = https://github.com/techcoderlab/emergency.git

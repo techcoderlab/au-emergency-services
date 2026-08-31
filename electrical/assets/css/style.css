@@ -1,0 +1,132 @@
+/* ==========================================================================
+   BrightSpark Electrical — Landing Page Styles
+   Palette: #0057FF primary · #E8F0FF secondary · #D7FF3F accent
+            #FFFFFF surface · #102033 text · #F4F7FB background
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    background-color: #F4F7FB;
+}
+
+/* Headings use Manrope; body defaults to DM Sans via the Tailwind config */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+    font-family: "Manrope", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   1. CUSTOM SCROLLBARS (Cross-Browser)
+   ========================================================================== */
+
+/* Modern Standard (Firefox 64+ & upcoming standards) */
+html,
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #0057FF #E2E9F2;
+    /* [Thumb Color] [Track Color] */
+}
+
+/* Legacy WebKit Browsers (Chrome, Safari, Edge, Opera, iOS, Android) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #E9EEF5;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0057FF;
+    border-radius: 6px;
+    border: 2px solid #E9EEF5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D7FF3F;
+}
+
+/* ==========================================================================
+   2. INPUT AUTOFILL STYLING (Cross-Browser)
+   ========================================================================== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    /* Force a white background behind autofilled values */
+    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset !important;
+    -webkit-text-fill-color: #102033 !important;
+    font-family: inherit;
+    caret-color: #0057FF;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ==========================================================================
+   3. ALPINE + SELECTION + TEXTURE
+   ========================================================================== */
+
+[x-cloak] {
+    display: none !important;
+}
+
+::selection {
+    background-color: #D7FF3F;
+    color: #102033;
+}
+
+/* Ambient dot texture (light theme variant) */
+.dot-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(16, 32, 51, 0.07) 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+/* Coverage radar pulse (CSS Transforms per the design system) */
+@keyframes radar-pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.radar-ring {
+    animation: radar-pulse 2.8s ease-out infinite;
+    transform-origin: center;
+}
+
+/* ==========================================================================
+   4. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
