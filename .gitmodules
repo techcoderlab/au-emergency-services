@@ -4,3 +4,6 @@
 [submodule "emergency"]
 	path = emergency
 	url = https://github.com/techcoderlab/emergency.git
+[submodule "plumber"]
+	path = plumber
+	url = https://github.com/techcoderlab/plumber.git
