@@ -1,0 +1,6 @@
+[build]
+  publish = "." # Change this to "dist" or "build" if using React/Vue/Vite
+  command = "echo 'Building site...'" # Change to your framework build command if needed
+
+[build.environment]
+  GIT_SUBMODULES = "true"
